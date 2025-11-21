@@ -12,9 +12,18 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('customers', function (Blueprint $table) {
-            $table->id();
+            $table->string('customer_id')->primary();
+            $table->string('first_name');
+            $table->string('last_name');
+            $table->string('email');
+            $table->string('phone');
+            $table->string('driver_license');
+            $table->string('customer_type');
+            $table->date('registration_date');
+            $table->string('status');
             $table->timestamps();
         });
+
     }
 
     /**
