@@ -2,10 +2,25 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Customer extends Model
 {
-    use HasFactory;
+    public $incrementing = false;
+    protected $primaryKey = 'customer_id';
+    protected $keyType = 'string';
+
+    public $timestamps = false; 
+
+    protected $fillable = [
+        'customer_id',
+        'first_name',
+        'last_name',
+        'email',
+        'phone',
+        'driver_license',
+        'customer_type',
+        'registration_date',
+        'status',
+    ];
 }
