@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customers — Vehicle Rental System</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="min-h-screen flex flex-col items-center justify-start px-6 py-14">
+
+    <!-- WRAPPER -->
+    <div class="bg-white rounded-2xl shadow-lg p-12 w-full max-w-6xl border border-gray-200">
+
+        <!-- TITLE -->
+        <h1 class="text-4xl font-extrabold text-gray-900 text-center mb-3">
+            Customers
+        </h1>
+        <p class="text-center text-gray-600 mb-12 text-lg">
+            Customer records overview
+        </p>
+
+        <!-- SEARCH & ADD -->
+        <div class="flex flex-col sm:flex-row items-center justify-between mb-10 gap-4">
+            <input 
+                type="text"
+                placeholder="Search customers..."
+                class="w-full sm:w-80 px-4 py-3 border border-gray-300 rounded-xl bg-slate-50 focus:ring-2 focus:ring-blue-200 outline-none transition"
+            >
+
+            <button class="px-6 py-3 bg-blue-200 text-gray-800 font-medium rounded-xl shadow hover:bg-blue-300 transition">
+                + Add Customer
+            </button>
+        </div>
+
+        <!-- TABLE -->
+        <div class="overflow-x-auto rounded-2xl border border-gray-200 shadow-sm">
+
+            <table class="w-full text-left">
+
+                <!-- HEADER -->
+                <thead class="bg-slate-50 border-b border-gray-200">
+                    <tr>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Customer ID</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Name</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Email</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Phone</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Driver License</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Type</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Registration Date</th>
+                        <th class="py-4 px-6 font-semibold text-gray-700">Status</th>
+                        <th class="py-4 px-6 text-right font-semibold text-gray-700">Actions</th>
+                    </tr>
+                </thead>
+
+                <!-- BODY -->
+                <tbody class="text-gray-700">
+
+                    <!-- ROW 1 (EXAMPLE DATA) -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="py-4 px-6">CUST001</td>
+                        <td class="py-4 px-6 font-medium">Aulia Rahman</td>
+                        <td class="py-4 px-6">aulia@example.com</td>
+                        <td class="py-4 px-6">081234567890</td>
+                        <td class="py-4 px-6">DL99321</td>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 rounded-lg bg-emerald-50 text-emerald-700 text-sm">Regular</span>
+                        </td>
+                        <td class="py-4 px-6">2025-01-12</td>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 rounded-lg bg-blue-50 text-blue-700 text-sm">Active</span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                            <button class="px-4 py-2 text-sm bg-slate-100 rounded-lg hover:bg-slate-200 transition">View</button>
+                            <button class="px-4 py-2 text-sm bg-blue-200 rounded-lg hover:bg-blue-300 transition ml-2">Edit</button>
+                            <button class="px-4 py-2 text-sm bg-rose-200 rounded-lg hover:bg-rose-300 transition ml-2">Delete</button>
+                        </td>
+                    </tr>
+
+                    <!-- ROW 2 -->
+                    <tr class="hover:bg-slate-50 transition">
+                        <td class="py-4 px-6">CUST002</td>
+                        <td class="py-4 px-6 font-medium">Leni Saputra</td>
+                        <td class="py-4 px-6">leni@example.com</td>
+                        <td class="py-4 px-6">082233445566</td>
+                        <td class="py-4 px-6">DL77120</td>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 rounded-lg bg-indigo-50 text-indigo-700 text-sm">VIP</span>
+                        </td>
+                        <td class="py-4 px-6">2025-02-01</td>
+                        <td class="py-4 px-6">
+                            <span class="px-3 py-1 rounded-lg bg-green-50 text-green-700 text-sm">Active</span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                            <button class="px-4 py-2 text-sm bg-slate-100 rounded-lg hover:bg-slate-200 transition">View</button>
+                            <button class="px-4 py-2 text-sm bg-blue-200 rounded-lg hover:bg-blue-300 transition ml-2">Edit</button>
+                            <button class="px-4 py-2 text-sm bg-rose-200 rounded-lg hover:bg-rose-300 transition ml-2">Delete</button>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+        </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <p class="text-center text-gray-500 text-sm mt-8">
+        © 2025 Vehicle Rental System — All rights reserved.
+    </p>
+
+</div>
+
+</body>
+</html>
