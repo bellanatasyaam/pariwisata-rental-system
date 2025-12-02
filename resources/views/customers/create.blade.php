@@ -70,6 +70,11 @@
                     class="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white font-medium rounded-xl shadow-md transition">
                     Save Customer
                 </button>
+
+                <a href="{{ route('customers.index') }}"
+                    class="ml-4 px-6 py-3 bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium rounded-xl shadow-md transition">
+                    Cancel
+                </a>
             </div>
 
         </form>
