@@ -35,6 +35,13 @@
         {{-- GRID MENU --}}
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-7">
 
+            {{-- Chart of Accounts --}}
+            <a href="{{ url('/chart-of-accounts') }}" 
+            class="p-7 rounded-xl border border-teal-200 bg-teal-50 hover:shadow-lg hover:-translate-y-1 transition">
+                <h2 class="text-2xl font-semibold text-teal-700">Chart of Accounts</h2>
+                <p class="text-base text-teal-600">Daftar akun keuangan</p>
+            </a>
+
             {{-- Customers --}}
             <a href="{{ url('/customers') }}" 
                class="p-7 rounded-xl border border-blue-200 bg-blue-50 hover:shadow-lg hover:-translate-y-1 transition">
