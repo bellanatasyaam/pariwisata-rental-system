@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CustomerController;
+use App\Http\Controllers\VehicleController;
+use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ChartOfAccountController;
 
 Route::get('/', function () {
@@ -10,6 +12,12 @@ Route::get('/', function () {
 
 // ROUTE CUSTOMERS
 Route::resource('customers', CustomerController::class);
+
+// ROUTE VEHICLES
+Route::resource('vehicles', VehicleController::class);
+
+// ROUTE RESERVATIONS
+Route::resource('reservations', ReservationController::class);
 
 // ROUTE CHART OF ACCOUNT
 Route::get('/chart-of-accounts', [ChartOfAccountController::class, 'index'])
