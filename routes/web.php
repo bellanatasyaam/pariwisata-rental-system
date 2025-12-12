@@ -5,6 +5,7 @@ use App\Http\Controllers\CustomerController;
 use App\Http\Controllers\VehicleController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ChartOfAccountController;
+use App\Http\Controllers\RentalController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -18,6 +19,9 @@ Route::resource('vehicles', VehicleController::class);
 
 // ROUTE RESERVATIONS
 Route::resource('reservations', ReservationController::class);
+
+// ROUTE RENTALS
+Route::resource('rentals', RentalController::class);
 
 // ROUTE CHART OF ACCOUNT
 Route::get('/chart-of-accounts', [ChartOfAccountController::class, 'index'])
@@ -40,3 +44,4 @@ Route::put('/chart-of-accounts/{chartOfAccount}', [ChartOfAccountController::cla
 
 Route::delete('/chart-of-accounts/{chartOfAccount}', [ChartOfAccountController::class, 'destroy'])
     ->name('chart-of-accounts.destroy');
+
