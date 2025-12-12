@@ -5,32 +5,47 @@
 @section('content')
 
 <style>
-    .no-scrollbar::-webkit-scrollbar { display: none; }
-    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-
-    tr.hover-row:hover {
-        background: #f7faff;
-        transition: 0.18s;
+    /* Biar full width */
+    .table-wrapper {
+        width: 100%;
+        overflow-x: auto;
     }
 
-    thead th { white-space: nowrap; }
-    td { white-space: normal; }
+    table {
+        width: 100%;
+        table-layout: auto; /* <-- BIAR LEBIH NATURAL DAN LEBAR */
+        border-collapse: collapse;
+    }
 
-    .nowrap { white-space: nowrap; }
+    th, td {
+        padding: 10px 14px;
+        white-space: nowrap;
+        font-size: 14px;
+    }
 
-    .table-wrapper { overflow-x: auto; }
-    .table-wrapper.no-scrollbar::-webkit-scrollbar { display: none; }
+    thead th {
+        background: #f3f7ff;
+        font-weight: 600;
+        color: #425579;
+        border-bottom: 1px solid #dbe3f0;
+    }
 
-    .badge-xs {
-        display:inline-block;
-        padding:4px 8px;
-        border-radius:999px;
-        font-size:12px;
-        font-weight:600;
+    tbody tr {
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    tbody tr:hover {
+        background: #f9fbff;
+    }
+
+    /* Action column */
+    td a {
+        font-weight: 500;
     }
 </style>
 
-<div class="max-w-7xl mx-auto px-6 py-8">
+
+<div class="w-[95%] mx-auto px-6 py-8">
 
     <div class="bg-white rounded-2xl shadow-xl p-8 border border-gray-100">
 
@@ -55,7 +70,7 @@
 
         {{-- Table --}}
         <div class="rounded-2xl border border-gray-200 overflow-hidden shadow-sm">
-            <div class="table-wrapper no-scrollbar">
+            <div class="table-wrapper">
 
                 <table class="min-w-full">
                     <thead class="bg-gradient-to-r from-blue-50 to-blue-100">
@@ -114,25 +129,25 @@
                                 {{ optional($res->updated_at)->format('Y-m-d') }}
                             </td>
 
-                            <td class="px-5 py-4 text-center space-x-3 nowrap">
+                                <td class="px-3 py-2 text-center nowrap">
 
-                                <a href="{{ route('reservations.show', $res->reservation_id) }}"
-                                   class="text-blue-600 hover:text-blue-800 font-medium text-sm">View</a>
+                                    <a href="{{ route('reservations.show', $res->reservation_id) }}"
+                                    class="action-btn text-blue-600 hover:text-blue-800">View</a>
 
-                                <a href="{{ route('reservations.edit', $res->reservation_id) }}"
-                                   class="text-yellow-600 hover:text-yellow-700 font-medium text-sm">Edit</a>
+                                    <a href="{{ route('reservations.edit', $res->reservation_id) }}"
+                                    class="action-btn text-yellow-600 hover:text-yellow-700 ml-2">Edit</a>
 
-                                <form action="{{ route('reservations.destroy', $res->reservation_id) }}"
-                                      method="POST" class="inline-block"
-                                      onsubmit="return confirm('Delete this reservation?');">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button class="text-red-600 hover:text-red-800 font-medium text-sm" type="submit">
-                                        Delete
-                                    </button>
-                                </form>
+                                    <form action="{{ route('reservations.destroy', $res->reservation_id) }}"
+                                        method="POST" class="inline-block ml-2"
+                                        onsubmit="return confirm('Delete this reservation?');">
+                                        @csrf
+                                        @method('DELETE')
+                                        <button class="action-btn text-red-600 hover:text-red-800" type="submit">
+                                            Delete
+                                        </button>
+                                    </form>
 
-                            </td>
+                                </td>
 
                         </tr>
 
