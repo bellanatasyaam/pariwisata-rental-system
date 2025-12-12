@@ -12,12 +12,12 @@
 
     {{-- NAVBAR OPTIONAL --}}
     <div class="w-full bg-white shadow-md mb-6">
-        <div class="max-w-6xl mx-auto px-6 py-4">
+        <div class="max-w-full mx-auto px-6 py-4">
             <h1 class="text-xl font-bold text-gray-700">Vehicle Rental System</h1>
         </div>
     </div>
 
-    <div class="max-w-6xl mx-auto px-6">
+    <div class="max-w-full mx-auto px-6">
         @yield('content')
     </div>
 
