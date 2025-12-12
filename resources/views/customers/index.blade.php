@@ -73,7 +73,7 @@
                             </td>
 
                             <td class="px-5 py-4 text-gray-800">
-                                {{ $customer->first_name }} {{ $customer->last_name }}
+                                {{ ucfirst($customer->first_name) }} {{ ucfirst($customer->last_name) }}
                             </td>
 
                             <td class="px-5 py-4 text-gray-600">
